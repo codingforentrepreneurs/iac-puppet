@@ -5,6 +5,7 @@ groups:
   - name: linux
     targets:
       - 104.237.132.21
+      - 96.126.120.7
     config:
       transport: ssh
       ssh:

@@ -1,0 +1,9 @@
+parameters:
+  targets:
+    type: TargetSpec
+
+
+steps:
+  - name: hello_world
+    command: echo 'hello world'
+    targets: $targets
