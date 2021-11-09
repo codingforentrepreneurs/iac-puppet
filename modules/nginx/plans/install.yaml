@@ -1,0 +1,24 @@
+parameters:
+  targets:
+    type: TargetSpec
+
+
+
+steps:
+  - name: update_apt
+    command: sudo apt-get update
+    targets: $targets
+  - name: install_nginx
+    task: package 
+    parameters:
+      action: install
+      name: nginx
+    targets: $targets
+    description: "Install nginx"
+  - resources:
+    - type: service
+      title: nginx
+      paramets:
+        ensure: running
+    targets: $targets
+    description: "Ensure nginx is running on our servers"
