@@ -4,16 +4,14 @@
 groups:
   - name: linux
     targets:
-      - 45.33.15.159
-      - 173.255.196.19
-      - 45.33.5.72
+      - 104.237.132.21
     config:
       transport: ssh
       ssh:
         host-key-check: false
         user: root
-        password: 0Rj7NNdAWu27h7HOI-HPADmM1Pdk_Oi-uUSkW8LPRII
-        # private-key: /path/to/private_key.pem
+        # password: 0Rj7NNdAWu27h7HOI-HPADmM1Pdk_Oi-uUSkW8LPRII
+        private-key: /root/.ssh/id_rsa
 #   - name: windows
 #     targets:
 #       - name: win1
