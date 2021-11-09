@@ -12,3 +12,9 @@ sudo dpkg -i puppet-tools-release-*.deb
 sudo apt-get update
 sudo apt-get install puppet-bolt
 rm puppet-tools-release-*.deb
+
+
+
+# git remote set-url origin https://token@github.com/codingforentrepreneurs/iac-puppet.git
+
+# git remote add origin https://token@github.com/codingforentrepreneurs/iac-puppet.git
