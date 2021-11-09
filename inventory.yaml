@@ -4,8 +4,8 @@
 groups:
   - name: linux
     targets:
-      - 104.237.132.21
-      - 96.126.120.7
+      - 23.239.26.103
+      - 45.79.41.11
     config:
       transport: ssh
       ssh:

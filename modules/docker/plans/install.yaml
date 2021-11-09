@@ -1,0 +1,12 @@
+parameters:
+  targets:
+    type: TargetSpec
+
+
+steps:
+  - name: update_apt
+    command: sudo apt-get update
+    targets: $targets
+  - name: run_docker_init
+    targets: $targets
+    script: docker/docker_init.sh
