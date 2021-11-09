@@ -12,6 +12,9 @@ parameters:
     default: pyapp
 
 steps:
+  - name: install_docker
+    plan: docker::install
+    targets: $targets
   - name: install_git
     task: package
     targets: $targets
@@ -33,8 +36,13 @@ steps:
     arguments:
         - $dest
         - $tag
-  - name: docker_run_container
+  - name: trigger_pyapp_run
     targets: $targets
-    script: docker/docker_run.sh
-    arguments:
-        - $tag
+    plan: pyapp::run
+
+  # - name: docker_run_webapps_a
+  #   targets: webapps_a
+  #   script: docker/docker_run.sh
+  #   arguments:
+  #       - $tag
+  

@@ -1,0 +1,13 @@
+parameters:
+  targets:
+    type: TargetSpec
+  tag:
+    type: String
+    default: pyapp
+
+steps:
+  - name: docker_run_webapps
+    targets: $targets
+    script: docker/docker_run.sh
+    arguments:
+        - $tag

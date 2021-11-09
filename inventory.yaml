@@ -2,29 +2,20 @@
 # To read more about inventory files, see https://pup.pt/bolt-inventory
 #
 groups:
-  - name: linux
+  - name: webapps
     targets:
       - 23.239.26.103
       - 45.79.41.11
-    config:
-      transport: ssh
-      ssh:
-        host-key-check: false
-        user: root
-        # password: 0Rj7NNdAWu27h7HOI-HPADmM1Pdk_Oi-uUSkW8LPRII
-        private-key: /root/.ssh/id_rsa
-#   - name: windows
-#     targets:
-#       - name: win1
-#         uri: target3.example.com
-#       - name: win2
-#         uri: target4.example.com
-#     config:
-#       transport: winrm
+  - name: webapps_a
+    targets:
+      - 23.239.26.103
+  - name: webapps_b
+    targets:
+      - 45.79.41.11
+
 config:
+  transport: ssh
   ssh:
     host-key-check: false
-#   winrm:
-#     user: Administrator
-#     password: Bolt!
-#     ssl: false
+    user: root
+    private-key: /root/.ssh/id_rsa
