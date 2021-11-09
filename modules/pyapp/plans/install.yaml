@@ -1,0 +1,23 @@
+parameters:
+  targets:
+    type: TargetSpec
+  repo:
+    type: String
+    default: https://github.com/codingforentrepreneurs/iac-python
+
+steps:
+  - name: install_git
+    task: package
+    targets: $targets
+    parameters:
+      action: install
+      name: git
+  - name: make_dest_dir
+    command: mkdir -p /var/www/app/
+    targets: $targets
+  - name: git_clone_pull
+    targets: $targets
+    script: pyapp/git_clone_pull.sh
+    arguments:
+        - /var/www/app/
+        - $repo
