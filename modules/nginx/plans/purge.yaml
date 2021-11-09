@@ -1,0 +1,17 @@
+parameters:
+  targets:
+    type: TargetSpec
+
+  
+
+steps:
+  - resources:
+    - type: service
+      title: nginx
+      parameters:
+        ensure: stopped
+    - package: nginx
+      parameters:
+        ensure: absent
+    targets: $targets
+    description: "Remove nginx service"
